@@ -1,0 +1,18 @@
+List<int> getPrimesBetween(int a, int b) {
+  List<int> result = [];
+  for (int i = a; i <= b; i++) {
+    if (i == 1) continue;
+    bool flag = false;
+    for (int j = 2; j <= i; j++) {
+      if (i % j == 0 && i != j) {
+        flag = false;
+        break;
+      } else {
+        flag = true;
+      }
+    }
+    if (flag) result.add(i);
+  }
+  return result;
+
+}
